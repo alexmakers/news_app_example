@@ -1,0 +1,14 @@
+<%= form_for Article.new do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create' %>
+<% end %>
+
+
+<!-- <form id='new_article' method='post' action='/articles'>
+  <%# token_tag nil %>
+  <input type='text' name='title' placeholder='Title'>
+  <textarea name='body' placeholder='Body'>
+  </textarea>
+  <input type='submit' value='Create'>
+</form> -->
