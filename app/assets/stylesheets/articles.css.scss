@@ -1,3 +1,27 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-size: 20px;
+  font-family: Arial, Helvetica;
+  padding: 15px;
+}
+
+input[type=text], textarea {
+  width: 400px;
+  line-height: 150%;
+  font-size: 20px;
+  padding: 4px;
+  margin-bottom: 20px;
+  margin-top: 10px
+}
+
+input[type=submit] {
+  background: #27ae60;
+  border: 0;
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}

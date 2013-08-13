@@ -15,8 +15,6 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    @article.featured
-    
     @article = Article.new(params[:article].permit(:title, :body))
     
     if @article.save
@@ -25,6 +23,10 @@ class ArticlesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
   
 end

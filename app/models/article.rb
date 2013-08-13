@@ -4,5 +4,9 @@ class Article < ActiveRecord::Base
     p.validates :title
     p.validates :body
   end
+
+  def published
+    created_at
+  end
   
 end
