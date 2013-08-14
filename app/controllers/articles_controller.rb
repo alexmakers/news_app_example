@@ -16,12 +16,17 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(params[:article].permit(:title, :body))
-    
-    if @article.save
-      flash[:message] = 'Successfully created'
-      redirect_to action: 'index'
-    else
-      render :new
+    @article.save
+
+    respond_with(@article, status: 201) do |format|
+      if @article.valid?
+        format.html { 
+          flash[:message] = 'Successfully created'
+          redirect_to action: 'index'
+        }
+      else
+        format.html { render :new }
+      end
     end
   end
 
