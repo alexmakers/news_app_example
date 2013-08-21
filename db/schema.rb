@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801094044) do
+ActiveRecord::Schema.define(version: 20130814130325) do
 
   create_table "articles", force: true do |t|
     t.datetime "created_at"
@@ -19,5 +19,14 @@ ActiveRecord::Schema.define(version: 20130801094044) do
     t.string   "title"
     t.text     "body"
   end
+
+  create_table "authors", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "article_id"
+  end
+
+  add_index "authors", ["article_id"], name: "index_authors_on_article_id", using: :btree
 
 end
