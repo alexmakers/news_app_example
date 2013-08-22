@@ -4,3 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 NewsApp::Application.load_tasks
+
+task :foo do
+  puts "hi"
+end

@@ -2,6 +2,13 @@ NewsApp::Application.routes.draw do
   
   resources :articles do
     resources :authors
+
+    collection do
+      get 'oldnewest', action: 'newest'
+      
+      get 'newest/:page', action: 'newest',
+        constraints: { page: /\d+/ }
+    end
   end
 
   root 'articles#index'

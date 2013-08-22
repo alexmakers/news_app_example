@@ -50,5 +50,9 @@ class ArticlesController < ApplicationController
       render "edit"
     end
   end
+
+  def newest
+    render text: "Welcome to page #{params[:page]}"
+  end
   
 end
